@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: "rabbitmq:latest"
+    ports:
+      - "5672:5672"  # Port untuk RabbitMQ
+      - "15672:15672"  # Port untuk RabbitMQ Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"  # Ganti dengan nama pengguna yang Anda inginkan
+      RABBITMQ_DEFAULT_PASS: "guest"  # Ganti dengan kata sandi yang Anda inginkan
+
+  mongodb:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"  # Port untuk MongoDB
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"  # Nama pengguna root MongoDB
+      MONGO_INITDB_ROOT_PASSWORD: "password"  # Kata sandi root MongoDB
